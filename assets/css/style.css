@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.img-responsive {
+    background-image: url("../images/BG-3.jpg");
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Header */
+#header {
+    margin: 1rem auto;
+}
+
+#logo {
+    color: white;
+}
+
+.col-md-12 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#timer {
+    color: red;
+}
+
+#timerDiv {
+    width: 20%;
+    background: black;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    left: 40%;
+    opacity: .8;
+}
+
+/* jumbotron */
+.jumbotron {
+    background: white;
+    padding: 3rem;
+}
+
+.display-4 {
+    font-family: 'Courgette', cursive;
+    margin: .5rem 0;
+}
+
+.my-4 {
+    width: 80%;
+}
+
+.lead {
+    font-size: 30px;
+}
+
+/* Buttons */
+#game-starter,
+#instructions {
+    margin: 1rem;
+}
+
+/* Modal */
+#modal-title {
+    text-align: left;
+    padding: 2rem;
+}
+
+ul {
+    margin: 0 1rem;
+}
+
+#modal-footer {
+    background-color: #dc3545;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Score Board */
+.card-body {
+    text-align: center;
+    margin-top: .5rem;
+}
+
+.col-md-6 {
+    margin-top: .5rem;
+}
+
+/* Game Output */
+.card-header {
+    text-align: center;
+}
+
+.col-md-3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0.2rem 1rem;
+}
+
+/* Footer */
+.fixed-bottom {
+    background: white;
+    opacity: 0.8;
+    padding: 1rem;
+}
+
+.col-md-1 {
+    text-align: center;
+    opacity: 0.5;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px){
+    .jumbotron {
+        padding: 2rem;
+    }
+    .display-4 {
+        font-size: 40px;
+    }
+    .lead {
+        font-size: 20px;
+    }
+    .col-md-1 {
+        display: table-row-group;
+    }
+    .img-responsive {
+        height: 820px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .jumbotron {
+        padding: 2rem;
+    }
+    .display-4 {
+        font-size: 40px;
+    }
+    .lead {
+        font-size: 20px;
+    }
+    .img-responsive {
+        height: 820px;
+    }
+}
+  
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .jumbotron {
+        padding: 2rem;
+    }
+    .display-4 {
+        font-size: 40px;
+    }
+    .lead {
+        font-size: 20px;
+    }
+    .img-responsive {
+        height: 820px;
+    }
+}

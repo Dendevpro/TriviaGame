@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app2.js"></script>
+    <title>Trivia Game by Dendevpro</title>
+
+</head>
+
+<body class="img-responsive">
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <div class="container" id="content">
+            <div id="header">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 id="logo">Trivia Game</h1>
+                    </div>
+                    <div class="col-md-12">
+                        <div id="timer"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Large modal (Game Instructions) -->
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div id="modal-title">
+                            <h5>INSTRUCTIONS:</h5>
+                        </div>
+                        <ul>
+                            <li>As soon as you click the <b>Play Button</b> the game will start;</li><br>
+                            <li>You have <b>45 seconds</b> to answer all <b>10 questions</b>;</li><br>
+                            <li>Once you hit the <b>Choice</b> button there is no going back. So pay attention to your
+                                answer;</li><br>
+                            <!-- <li>If you fail to answer any question it will count as <b>wrong</b>;</li><br> -->
+                            <li>Your score will be displayed when you submit the last answer or if the time is up.</li><br>
+                        </ul>
+                        <div id="modal-footer">
+                            <h4><strong><em>Good Luck!!!</em></strong></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header and Call to Action -->
+            <div class="jumbotron text-center">
+                <h1 class="display-4">How well do you know Brazil?</h1>
+                <hr class="my-4">
+                <h3 class="lead">Let's test your knowledge in this trivia game!</h3>
+
+                <!-- Modal Button (Instructions) -->
+                <button type="button" class="btn btn-outline-primary" id="instructions" data-toggle="modal" data-target=".bd-example-modal-lg">Instructions</button>
+
+                <!-- Play Button -->
+                <button type="button" id="game-starter" class="btn btn-success">Play</button>
+            </div>
+            <div class="col-md-12">
+                <div id="timer"></div>
+            </div>
+
+            <!-- Score Board -->
+            <div id="score-board">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <p id="right-answer"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <p id="wrong-answer"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Output goes here (code is refered on the JS file) -->
+            <div id="game-output">
+                <div class="card">
+                    <h4 class="card-header" id="question"></h4> <!-- Question -->
+
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+
+                            <button class="answer col-md-3 btn btn-outline-success">
+                                <em class="form-check-label" data-answer="0" id="choiceA" for="answer1"></em>
+                            </button>
+
+                            <button class="answer col-md-3 btn btn-outline-warning">
+                                <em class="form-check-label" data-answer="1" id="choiceB" for="answer2"></em>
+                            </button>
+
+                            <button class="answer col-md-3 btn btn-outline-primary">
+                                <em class="form-check-label" data-answer="2" id="choiceC" for="answer3"></em>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="fixed-bottom">
+            <div class="container" id="my-social-media">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-1">
+                        <a href="https://github.com/Dendevpro" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
+                        </a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="mailto:dendevpro@gmail.com" onclick="myfunc">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.917 16.083c-2.258 0-4.083-1.825-4.083-4.083s1.825-4.083 4.083-4.083c1.103 0 2.024.402 2.735 1.067l-1.107 1.068c-.304-.292-.834-.63-1.628-.63-1.394 0-2.531 1.155-2.531 2.579 0 1.424 1.138 2.579 2.531 2.579 1.616 0 2.224-1.162 2.316-1.762h-2.316v-1.4h3.855c.036.204.064.408.064.677.001 2.332-1.563 3.988-3.919 3.988zm9.917-3.5h-1.75v1.75h-1.167v-1.75h-1.75v-1.166h1.75v-1.75h1.167v1.75h1.75v1.166z" /></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
