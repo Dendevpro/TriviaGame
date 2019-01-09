@@ -8,7 +8,7 @@ h1 {
 }
 
 .img-responsive {
-    background-image: url("../images/BG-3.jpg");
+    background-image: url("../images/BG-3.png");
     -webkit-background-size: cover;
     background-repeat: no-repeat;
 }
